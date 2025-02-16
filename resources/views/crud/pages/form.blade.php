@@ -34,7 +34,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="file" name="userprofile"  class="form-control" autocomplete="off" value="{{old('userprofile')}}">
+                                    <input type="file" name="userprofile"  class="form-control" autocomplete="off" value="{{old('userprofile')}}" id="userprofile">
                                     @error('userprofile')
                                         <div class="alert alert-danger">{{$message}}</div>
                                     @enderror

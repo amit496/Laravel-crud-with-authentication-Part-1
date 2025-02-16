@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Text Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+<div id="model_code_container" style="border: 1px solid #ccc; padding: 20px; width: 100%;">
+    <button onclick="model_code();"  style="background: rgb(125, 4, 238); border: none; outline: none; padding: 10px 30px; color: #fff; letter-spacing: 1px; cursor: pointer; margin-bottom: 5px;" id="model_code_button">Copy</button>
+    <div id="model_code_box">
+        delete delete
+    </div>
+</div>
+
+<script>
+function model_code() {
+    var text = document.getElementById("model_code_box").innerText;
+    var tempInput = document.createElement("textarea");
+    tempInput.value = text;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    var messageElement = document.getElementById("model_code_button");
+    messageElement.innerHTML = "Copied! &#10003;";
+    setTimeout(function () {
+        messageElement.innerText = "Copy";
+    }, 5000);
+}
+</script>
+
+
+
+
+
+
+
+</body>
+
+</html>
