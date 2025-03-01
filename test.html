@@ -12,23 +12,23 @@
 
 <body>
 
-<div id="model_code_container" style="border: 1px solid #ccc; padding: 20px; width: 100%;">
-    <button onclick="model_code();"  style="background: rgb(125, 4, 238); border: none; outline: none; padding: 10px 30px; color: #fff; letter-spacing: 1px; cursor: pointer; margin-bottom: 5px;" id="model_code_button">Copy</button>
-    <div id="model_code_box">
+<div id="syntax_code_container" style="border: 1px solid #ccc; padding: 20px; width: 100%;">
+    <button onclick="syntax_code();"  style="background: rgb(125, 4, 238); border: none; outline: none; padding: 10px 30px; color: #fff; letter-spacing: 1px; cursor: pointer; margin-bottom: 5px;" id="syntax_code_button">Copy</button>
+    <div id="syntax_code_box">
         delete delete
     </div>
 </div>
 
 <script>
-function model_code() {
-    var text = document.getElementById("model_code_box").innerText;
+function syntax_code() {
+    var text = document.getElementById("syntax_code_box").innerText;
     var tempInput = document.createElement("textarea");
     tempInput.value = text;
     document.body.appendChild(tempInput);
     tempInput.select();
     document.execCommand("copy");
     document.body.removeChild(tempInput);
-    var messageElement = document.getElementById("model_code_button");
+    var messageElement = document.getElementById("syntax_code_button");
     messageElement.innerHTML = "Copied! &#10003;";
     setTimeout(function () {
         messageElement.innerText = "Copy";
